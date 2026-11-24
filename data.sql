@@ -1,31 +1,33 @@
 -- data.sql: sample data for group_7 (run after schema.sql)
 USE group_7;
 
--- lawyer
-INSERT INTO lawyer (lawyer_id, name, email, lawyer_type) VALUES
-  (1, 'Kayode Idris', 'kidrislaw@yahoo.com', 'In-house'),
-  (2, 'Elizabeth Cardoso', 'ecard6@uic.edu', 'Outsourced'),
-  (3, 'Kaitlyn Aquino', 'kaqui@uic.edu', 'In-house'),
-  (4, 'Aiden Pina', 'apina7@uic.edu', 'Outsourced'),
-  (5, 'Victoria Vega', 'vvega@uic.edu', 'Outsourced'),
-  (6, 'Holly Robles', 'hrobl23@uic.edu', 'In-house'),
-  (7, 'Kike Idris', 'kidri2@uic.edu', 'In-house'),
-  (8, 'Katy Perry', 'kperry@gmail.com', 'Outsourced'),
-  (9, 'Khloe Kardashian', 'kkardas@hotmail.com', 'In-house'),
-  (10, 'Michael Jordan', 'mjordan@yahoo.com', 'In-house'),
-  (11, 'Jane Doe', 'jdoe@gmail.com', 'In-house'),
-  (12, 'John Doe', 'jhdoe@yahoo.com', 'In-house'),
-  (13, 'Christopher Nolan', 'chnolan@hotmail.com', 'Outsourced'),
-  (14, 'Will Smith', 'willsmith@gmail.com', 'In-house'),
-  (15, 'Beyonce Knowles', 'bknowles@yahoo.com', 'In-house'),
-  (16, 'Solana Rowe', 'srowe@yahoo.com', 'In-house'),
-  (17, 'Willow Smith', 'wsmith@yahoo.com', 'Outsourced'),
-  (18, 'Rayvn Lenae', 'rlenae@gmail.com', 'In-house'),
-  (19, 'Ariana Grande', 'agrande@hotmail.com', 'Outsourced'),
-  (20, 'Serena William', 'swilliam@hotmail.com', 'In-house');
+-- lawyer (20 rows)
+-- DONE BY: Kike
+INSERT INTO lawyer (lawyer_id, name, phone_number, email, lawyer_type) VALUES
+  (1, 'Kayode Idris', '312-555-0100', 'kidrislaw@yahoo.com', 'In-house'),
+  (2, 'Elizabeth Cardoso', '312-555-0102', 'ecard6@uic.edu', 'Outsourced'),
+  (3, 'Kaitlyn Aquino', '312-555-0103', 'kaqui@uic.edu', 'In-house'),
+  (4, 'Aiden Pina', '773-555-0104', 'apina7@uic.edu', 'Outsourced'),
+  (5, 'Victoria Vega', '773-555-0105', 'vvega@uic.edu', 'Outsourced'),
+  (6, 'Holly Robles', '312-555-0106', 'hrobl23@uic.edu', 'In-house'),
+  (7, 'Kike Idris', '312-555-0107', 'kidri2@uic.edu', 'In-house'),
+  (8, 'Katy Perry', '708-555-0108', 'kperry@gmail.com', 'Outsourced'),
+  (9, 'Khloe Kardashian', '312-555-0109', 'kkardas@hotmail.com', 'In-house'),
+  (10, 'Michael Jordan', '312-555-0110', 'mjordan@yahoo.com', 'In-house'),
+  (11, 'Jane Doe', '312-555-0111', 'jdoe@gmail.com', 'In-house'),
+  (12, 'John Doe', '312-555-0112', 'jhdoe@yahoo.com', 'In-house'),
+  (13, 'Christopher Nolan', '847-555-0113', 'chnolan@hotmail.com', 'Outsourced'),
+  (14, 'Will Smith', '312-555-0114', 'willsmith@gmail.com', 'In-house'),
+  (15, 'Beyonce Knowles', '312-555-0115', 'bknowles@yahoo.com', 'In-house'),
+  (16, 'Solana Rowe', '312-555-0116', 'srowe@yahoo.com', 'In-house'),
+  (17, 'Willow Smith', '630-555-0117', 'wsmith@yahoo.com', 'Outsourced'),
+  (18, 'Rayvn Lenae', '312-555-0118', 'rlenae@gmail.com', 'In-house'),
+  (19, 'Ariana Grande', '773-555-0119', 'agrande@hotmail.com', 'Outsourced'),
+  (20, 'Serena William', '312-555-0120', 'swilliam@hotmail.com', 'In-house');
 
--- lawyer_practice_area: multivalued {Practice Area} (R2)
-INSERT INTO lawyer_practice_area (lawyer_id, practice_area) VALUES
+-- law_practice_area (R2)
+-- DONE BY: Kike, Modified by: Elizabeth
+INSERT INTO law_practice_area (lawyer_id, practice_area) VALUES
   (1, 'Immigration'),
   (1, 'Personal Injury'),
   (2, 'Immigration'),
@@ -49,9 +51,76 @@ INSERT INTO lawyer_practice_area (lawyer_id, practice_area) VALUES
   (16, 'Personal Injury'),
   (17, 'Personal Injury'),
   (18, 'Immigration'),
-  (18, 'Personal Injury');
+  (18, 'Personal Injury'),
+  (19, 'Personal Injury'),
+  (20, 'Immigration');
 
--- cases
+-- client (25 rows)
+-- DONE BY: Kaitlyn, Modified by: Elizabeth
+INSERT INTO client (client_id, name, email) VALUES
+  (1, 'Ana Lopez', 'ana.lopez@gmail.com'),
+  (2, 'Luis Lopez', 'luis.lopez@gmail.com'),
+  (3, 'Sofia Lopez', 'sofia.lopez@gmail.com'),
+  (4, 'Mark Reed', 'mreed@yahoo.com'),
+  (5, 'Hannah Reed', 'hreed@yahoo.com'),
+  (6, 'Ravi Patel', 'rpatel@gmail.com'),
+  (7, 'Meera Patel', 'mpatel@gmail.com'),
+  (8, 'Carlos Mendoza', 'cmendoza@hotmail.com'),
+  (9, 'Fatima Yusuf', 'fyusuf@gmail.com'),
+  (10, 'Ibrahim Yusuf', 'iyusuf@gmail.com'),
+  (11, 'Grace Kim', 'gkim@outlook.com'),
+  (12, 'Derek Johnson', 'djohnson@gmail.com'),
+  (13, 'Olga Petrova', 'opetrova@gmail.com'),
+  (14, 'Mateo Garcia', 'mgarcia@yahoo.com'),
+  (15, 'Lucia Garcia', 'lgarcia@yahoo.com'),
+  (16, 'Kwame Mensah', 'kmensah@gmail.com'),
+  (17, 'Emily Carter', 'ecarter@outlook.com'),
+  (18, 'Nguyen Van An', 'nvan@gmail.com'),
+  (19, 'Tran Thi Mai', 'ttmai@gmail.com'),
+  (20, 'Samuel Brooks', 'sbrooks@hotmail.com'),
+  (21, 'Aisha Rahman', 'arahman@gmail.com'),
+  (22, 'Diego Herrera', 'dherrera@yahoo.com'),
+  (23, 'Chloe Martin', 'cmartin@outlook.com'),
+  (24, 'Yusuf Demir', 'ydemir@gmail.com'),
+  (25, 'Isabel Ortiz', 'iortiz@gmail.com');
+
+-- client_phone_numbers (R3)
+-- DONE BY: Kaitlyn, Modified by: Elizabeth
+INSERT INTO client_phone_numbers (client_id, phone_number) VALUES
+  (1, '312-555-1001'),
+  (1, '312-555-1002'),
+  (2, '312-555-1003'),
+  (3, '312-555-1004'),
+  (4, '773-555-1005'),
+  (5, '773-555-1006'),
+  (5, '773-555-1007'),
+  (6, '847-555-1008'),
+  (7, '847-555-1009'),
+  (8, '708-555-1010'),
+  (8, '708-555-1011'),
+  (9, '312-555-1012'),
+  (10, '312-555-1013'),
+  (11, '312-555-1014'),
+  (12, '773-555-1015'),
+  (12, '773-555-1016'),
+  (13, '630-555-1017'),
+  (14, '312-555-1018'),
+  (15, '312-555-1019'),
+  (16, '773-555-1020'),
+  (17, '312-555-1021'),
+  (17, '312-555-1022'),
+  (18, '847-555-1023'),
+  (19, '847-555-1024'),
+  (20, '708-555-1025'),
+  (21, '312-555-1026'),
+  (22, '773-555-1027'),
+  (22, '773-555-1028'),
+  (23, '312-555-1029'),
+  (24, '630-555-1030'),
+  (25, '312-555-1031');
+
+-- cases (24 rows)
+-- DONE BY: Aiden, Modified by: Elizabeth
 INSERT INTO cases (case_number, case_type, open_date, closed_date, status, total_fee, receipt_number) VALUES
   (1001, 'Immigration', '2026-01-10', NULL, 'Open', 3500.00, 'IOE1234567890'),
   (1002, 'Personal Injury', '2026-02-15', NULL, 'Pending', 5000.00, NULL),
@@ -60,9 +129,142 @@ INSERT INTO cases (case_number, case_type, open_date, closed_date, status, total
   (1005, 'Immigration', '2026-04-05', NULL, 'Pending', 4000.00, 'IOE1122334455'),
   (1006, 'Personal Injury', '2026-05-12', NULL, 'Open', 6000.00, NULL),
   (1007, 'Immigration', '2026-06-18', '2026-09-10', 'Closed', 3000.00, 'IOE5566778899'),
-  (1008, 'Personal Injury', '2026-07-22', NULL, 'Open', 4500.00, NULL);
+  (1008, 'Personal Injury', '2026-07-22', NULL, 'Open', 4500.00, NULL),
+  (1009, 'Immigration', '2026-01-25', NULL, 'Denied', 2800.00, 'NBC2233445566'),
+  (1010, 'Personal Injury', '2026-02-03', '2026-05-29', 'Closed', 8000.00, NULL),
+  (1011, 'Immigration', '2026-02-20', NULL, 'Pending', 3200.00, 'MSC3344556677'),
+  (1012, 'Personal Injury', '2026-03-14', NULL, 'Pending', 5500.00, NULL),
+  (1013, 'Immigration', '2026-04-18', NULL, 'Approved', 2700.00, 'IOE4455667788'),
+  (1014, 'Personal Injury', '2026-04-30', NULL, 'Open', 6500.00, NULL),
+  (1015, 'Immigration', '2026-05-07', NULL, 'Open', 3600.00, NULL),
+  (1016, 'Personal Injury', '2026-06-02', '2026-10-20', 'Closed', 9000.00, NULL),
+  (1017, 'Immigration', '2026-06-25', NULL, 'Pending', 4200.00, 'EAC5566778800'),
+  (1018, 'Personal Injury', '2026-07-09', NULL, 'Pending', 5200.00, NULL),
+  (1019, 'Immigration', '2026-08-01', NULL, 'Open', 3100.00, NULL),
+  (1020, 'Personal Injury', '2026-08-15', NULL, 'Open', 4800.00, NULL),
+  (1021, 'Immigration', '2026-09-03', NULL, 'Pending', 3900.00, 'IOE6677889900'),
+  (1022, 'Personal Injury', '2026-09-21', NULL, 'Open', 7500.00, NULL),
+  (1023, 'Immigration', '2026-10-06', NULL, 'Open', 2900.00, NULL),
+  (1024, 'Personal Injury', '2026-10-28', NULL, 'Open', 5800.00, NULL);
 
--- document
+-- case_client: Involved In, with role (R7, C1, C3, C13)
+-- DONE BY: Elizabeth
+INSERT INTO case_client (case_number, client_id, role) VALUES
+  (1001, 1, 'Principal Applicant'),
+  (1001, 2, 'Beneficiary'),
+  (1001, 3, 'Beneficiary'),
+  (1002, 4, 'Injured Party'),
+  (1002, 5, 'Injured Party'),
+  (1003, 6, 'Principal Applicant'),
+  (1003, 7, 'Beneficiary'),
+  (1004, 8, 'Injured Party'),
+  (1005, 9, 'Principal Applicant'),
+  (1005, 10, 'Beneficiary'),
+  (1006, 11, 'Injured Party'),
+  (1007, 13, 'Principal Applicant'),
+  (1008, 12, 'Injured Party'),
+  (1009, 14, 'Principal Applicant'),
+  (1009, 15, 'Beneficiary'),
+  (1010, 16, 'Injured Party'),
+  (1011, 18, 'Principal Applicant'),
+  (1011, 19, 'Beneficiary'),
+  (1012, 17, 'Injured Party'),
+  (1013, 21, 'Principal Applicant'),
+  (1014, 20, 'Injured Party'),
+  (1014, 22, 'Injured Party'),
+  (1015, 24, 'Principal Applicant'),
+  (1016, 23, 'Injured Party'),
+  (1017, 25, 'Principal Applicant'),
+  (1018, 4, 'Injured Party'),
+  (1019, 6, 'Principal Applicant'),
+  (1020, 8, 'Injured Party'),
+  (1020, 14, 'Injured Party'),
+  (1021, 22, 'Principal Applicant'),
+  (1022, 12, 'Injured Party'),
+  (1023, 11, 'Principal Applicant'),
+  (1024, 16, 'Injured Party');
+
+-- case_lawyer: Assigned, with date_assigned (R8, C2, C4)
+-- lawyers 19 and 20 intentionally have no cases (C4)
+-- DONE BY: Elizabeth
+INSERT INTO case_lawyer (case_number, lawyer_id, date_assigned) VALUES
+  (1001, 1, '2026-01-10'),
+  (1001, 5, '2026-01-24'),
+  (1002, 4, '2026-02-16'),
+  (1003, 6, '2026-03-01'),
+  (1004, 7, '2026-03-20'),
+  (1004, 8, '2026-04-09'),
+  (1005, 9, '2026-04-07'),
+  (1005, 13, '2026-05-05'),
+  (1006, 11, '2026-05-12'),
+  (1007, 2, '2026-06-21'),
+  (1008, 12, '2026-07-23'),
+  (1009, 10, '2026-01-25'),
+  (1010, 14, '2026-02-03'),
+  (1010, 17, '2026-02-13'),
+  (1011, 16, '2026-02-21'),
+  (1012, 15, '2026-03-14'),
+  (1013, 18, '2026-04-18'),
+  (1014, 3, '2026-04-30'),
+  (1015, 1, '2026-05-07'),
+  (1016, 11, '2026-06-04'),
+  (1016, 4, '2026-06-17'),
+  (1017, 9, '2026-06-26'),
+  (1018, 14, '2026-07-09'),
+  (1019, 3, '2026-08-01'),
+  (1020, 15, '2026-08-16'),
+  (1021, 6, '2026-09-03'),
+  (1021, 2, '2026-09-10'),
+  (1022, 7, '2026-09-21'),
+  (1023, 10, '2026-10-08'),
+  (1024, 12, '2026-10-28');
+
+-- payment (40 rows; R5, C6, C7)
+-- DONE BY: Elizabeth
+INSERT INTO payment (payment_number, case_number, client_id, amount, payment_date) VALUES
+  (1, 1001, 1, 500.00, '2026-01-15'),
+  (2, 1001, 1, 500.00, '2026-02-15'),
+  (3, 1001, 2, 250.00, '2026-03-15'),
+  (4, 1002, 4, 1000.00, '2026-02-20'),
+  (5, 1002, 5, 500.00, '2026-04-01'),
+  (6, 1003, 6, 1250.00, '2026-03-05'),
+  (7, 1003, 6, 1250.00, '2026-05-05'),
+  (8, 1004, 8, 2000.00, '2026-03-25'),
+  (9, 1004, 8, 2500.00, '2026-05-01'),
+  (10, 1004, 8, 2500.00, '2026-06-10'),
+  (11, 1005, 9, 400.00, '2026-04-10'),
+  (12, 1006, 11, 1500.00, '2026-05-20'),
+  (13, 1006, 11, 1000.00, '2026-07-20'),
+  (14, 1007, 13, 1500.00, '2026-06-20'),
+  (15, 1007, 13, 1500.00, '2026-08-20'),
+  (16, 1008, 12, 600.00, '2026-08-01'),
+  (17, 1009, 14, 1400.00, '2026-02-01'),
+  (18, 1009, 15, 700.00, '2026-03-01'),
+  (19, 1010, 16, 4000.00, '2026-02-10'),
+  (20, 1010, 16, 4000.00, '2026-04-10'),
+  (21, 1011, 18, 800.00, '2026-03-01'),
+  (22, 1011, 18, 800.00, '2026-05-01'),
+  (23, 1012, 17, 1000.00, '2026-03-20'),
+  (24, 1013, 21, 2700.00, '2026-04-25'),
+  (25, 1014, 20, 1500.00, '2026-05-10'),
+  (26, 1014, 22, 1500.00, '2026-06-10'),
+  (27, 1015, 24, 300.00, '2026-05-15'),
+  (28, 1016, 23, 3000.00, '2026-06-10'),
+  (29, 1016, 23, 3000.00, '2026-08-10'),
+  (30, 1016, 23, 3000.00, '2026-10-10'),
+  (31, 1017, 25, 1000.00, '2026-07-01'),
+  (32, 1017, 25, 1000.00, '2026-09-01'),
+  (33, 1018, 4, 800.00, '2026-07-15'),
+  (34, 1019, 6, 500.00, '2026-08-10'),
+  (35, 1020, 8, 1200.00, '2026-08-20'),
+  (36, 1020, 14, 1200.00, '2026-09-20'),
+  (37, 1021, 22, 1000.00, '2026-09-10'),
+  (38, 1022, 12, 2000.00, '2026-10-01'),
+  (39, 1023, 11, 300.00, '2026-10-15'),
+  (40, 1024, 16, 1000.00, '2026-11-05');
+
+-- document (25 rows; R6, C8, C10)
+-- DONE BY: Aiden, Modified by: Elizabeth
 INSERT INTO document (document_id, name, document_type, document_source, upload_date, case_number) VALUES
   (101, 'Visa Petition', 'Immigration Form', 'Client', '2026-01-12', 1001),
   (102, 'Passport Copy', 'Identification', 'Client', '2026-01-15', 1001),
@@ -75,4 +277,17 @@ INSERT INTO document (document_id, name, document_type, document_source, upload_
   (109, 'Medical Bill', 'Medical Record', 'Hospital', '2026-05-15', 1006),
   (110, 'Accident Photos', 'Evidence', 'Client', '2026-05-16', 1006),
   (111, 'Approval Notice', 'Government Notice', 'USCIS', '2026-06-20', 1007),
-  (112, 'Police Report', 'Police Report', 'Police Department', '2026-07-25', 1008);
+  (112, 'Police Report', 'Police Report', 'Police Department', '2026-07-25', 1008),
+  (113, 'Denial Notice', 'Government Notice', 'USCIS', '2026-05-30', 1009),
+  (114, 'Settlement Agreement', 'Legal Agreement', 'Insurance Company', '2026-05-20', 1010),
+  (115, 'Birth Certificate', 'Identification', 'Client', '2026-02-25', 1011),
+  (116, 'Physical Therapy Records', 'Medical Record', 'Clinic', '2026-04-02', 1012),
+  (117, 'Green Card Application', 'Immigration Form', 'Client', '2026-04-20', 1013),
+  (118, 'Witness Statement', 'Evidence', 'Witness', '2026-05-05', 1014),
+  (119, 'Passport Copy', 'Identification', 'Client', '2026-05-09', 1015),
+  (120, 'Medical Bill', 'Medical Record', 'Hospital', '2026-06-10', 1016),
+  (121, 'Settlement Agreement', 'Legal Agreement', 'Opposing Counsel', '2026-10-15', 1016),
+  (122, 'Receipt Notice', 'Government Notice', 'USCIS', '2026-07-10', 1017),
+  (123, 'Accident Report', 'Police Report', 'Police Department', '2026-07-12', 1018),
+  (124, 'Marriage Certificate', 'Identification', 'Client', '2026-09-08', 1021),
+  (125, 'Medical Records', 'Medical Record', 'Hospital', '2026-09-25', 1022);
